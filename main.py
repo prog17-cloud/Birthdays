@@ -13,7 +13,7 @@ data = pandas.read_csv('birthdays.csv')
 today_matches = data[(data["month"] == month) & (data["day"] == day)]
 if not today_matches.empty:
     name = today_matches.iloc[0]["name"]
-    template_list=glob.glob("D://AutoBirthdayWishes//letter_templates/*.txt")
+    template_list = glob.glob("letter_templates/*.txt") 
     letter=random.choice(template_list)
     with open(letter,'r')as file :
         content = file.read()
